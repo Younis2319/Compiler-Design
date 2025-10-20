@@ -1,6 +1,6 @@
 import re
 
-# --- 1. Token specifications ---
+
 TOKEN_SPECIFICATIONS = [
     ('Keywords', r'\b(if|else|switch|case|default|while|for|do|break|continue|goto|int|short|long|float|double|void|bool|char|string|signed|unsigned|auto|const|static|new|delete|using|namespace|try|throw|catch|class|struct|union|public|private|protected|friend|this|virtual|return|true|false)\b'),
     ('Identifiers', r'[a-zA-Z_]\w*'),
@@ -14,7 +14,7 @@ TOKEN_SPECIFICATIONS = [
     ('MISMATCH', r'.'),
 ]
 
-# --- 2. Token class ---
+
 class Token:
     def __init__(self, type, value, line, column):
         self.type = type
@@ -25,7 +25,7 @@ class Token:
     def __repr__(self):
         return f"<{self.type}, {self.value}>"
 
-# --- 3. Tokenizer function ---
+
 def tokenize(code):
     tokens = []
     line_num = 1
@@ -52,7 +52,7 @@ def tokenize(code):
         match = get_token(code, pos)
     return tokens
 
-# --- 4. Main Function ---
+
 def main():
     print("Enter your C++ code below (end with an empty line):")
     cpp_code = ""
